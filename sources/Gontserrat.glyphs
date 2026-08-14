@@ -11,7 +11,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)";
+copyright = "Gontserrat is a derivative work of Montserrat under the Open Font License. Copyright 2026 Gabriel Classon.";
 customParameters = (
 {
 name = fsType;
@@ -56,10 +56,10 @@ Tag = wght;
 );
 }
 );
-date = "2021-06-21 08:39:08 +0000";
-designer = "Julieta Ulanovsky";
-designerURL = "http://www.zkysky.com.ar/";
-familyName = Montserrat;
+date = "2026-08-14 00:00:00 +0000";
+designer = "Gabriel Classon";
+designerURL = "https://gabeclasson.com/";
+familyName = Gontserrat;
 featurePrefixes = (
 {
 automatic = 1;

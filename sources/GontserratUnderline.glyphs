@@ -11,7 +11,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)";
+copyright = "Gontserrat is a derivative work of Montserrat under the Open Font License. Copyright 2026 Gabriel Classon.";
 customParameters = (
 {
 name = fsType;
@@ -56,10 +56,10 @@ Tag = wght;
 );
 }
 );
-date = "2017-10-17 18:36:54 +0000";
-designer = "Julieta Ulanovsky";
-designerURL = "http://www.zkysky.com.ar/";
-familyName = "Montserrat Underline";
+date = "2026-08-14 00:00:00 +0000";
+designer = "Gabriel Classon";
+designerURL = "https://gabeclasson.com/";
+familyName = "Gontserrat Underline";
 featurePrefixes = (
 {
 automatic = 1;
@@ -305815,7 +305815,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 20;
@@ -305833,7 +305833,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 33;
@@ -305852,7 +305852,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 50;
@@ -305871,7 +305871,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 71;
@@ -305889,7 +305889,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 96;
@@ -305908,7 +305908,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 125;
@@ -305927,7 +305927,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 156;
@@ -305947,7 +305947,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 190;
@@ -305966,7 +305966,7 @@ value = 1;
 },
 {
 name = familyName;
-value = "Montserrat Underline";
+value = "Gontserrat Underline";
 }
 );
 interpolationWeight = 226;
