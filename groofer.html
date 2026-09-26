@@ -56,10 +56,16 @@
             { name: 'Black', val: 900 }
         ];
 
+        // Removed Alternates as requested
         const families = [
             { id: 'Regular', dir: 'fonts', prefix: 'Gontserrat' },
-            { id: 'Alternates', dir: 'fonts-alternates', prefix: 'GontserratAlternates' },
             { id: 'Underline', dir: 'fonts-underline', prefix: 'GontserratUnderline' }
+        ];
+
+        // Re-added Stylistic Sets
+        const stylisticSets = [
+            { id: 'Default', feat: '' },
+            { id: 'SS01', feat: "&quot;ss01&quot;" }
         ];
 
         const italics = [
@@ -99,28 +105,36 @@
         
         // Generate Table Headers
         htmlOut += '<thead><tr>';
-        htmlOut += '<th>Weight</th><th>Version</th><th>Style</th>';
+        htmlOut += '<th>Weight</th><th>Version</th><th>Alternate</th><th>Style</th>';
         chars.forEach(c => {
             htmlOut += `<th>${c}</th>`;
         });
         htmlOut += '</tr></thead><tbody>';
         
-        // Loop Order: Weight -> Family -> Italics
+        // Loop Order: Weight -> Family -> StylisticSets -> Italics
         weights.forEach(w => {
             families.forEach(f => {
-                italics.forEach(i => {
-                    
-                    htmlOut += `<tr>
-                        <td class="info">${w.name}</td>
-                        <td class="info">${f.id}</td>
-                        <td class="info">${i.id}</td>`;
-                    
-                    // Render Characters (All globally set to small caps, so lowercase characters are retained)
-                    chars.forEach(c => {
-                        htmlOut += `<td class="char-cell" style="font-family: '${f.prefix}', 'Adobe NotDef', sans-serif; font-weight: ${w.val}; font-style: ${i.style}; font-feature-settings: &quot;smcp&quot;; font-size: 72px;">${c}</td>`;
+                stylisticSets.forEach(ss => {
+                    italics.forEach(i => {
+                        
+                        // Combine OpenType Features (Small caps is globally applied)
+                        let features = ["&quot;smcp&quot;"];
+                        if (ss.feat) features.push(ss.feat);
+                        let featString = `font-feature-settings: ${features.join(', ')};`;
+                        
+                        htmlOut += `<tr>
+                            <td class="info">${w.name}</td>
+                            <td class="info">${f.id}</td>
+                            <td class="info">${ss.id}</td>
+                            <td class="info">${i.id}</td>`;
+                        
+                        // Render Characters 
+                        chars.forEach(c => {
+                            htmlOut += `<td class="char-cell" style="font-family: '${f.prefix}', 'Adobe NotDef', sans-serif; font-weight: ${w.val}; font-style: ${i.style}; ${featString} font-size: 72px;">${c}</td>`;
+                        });
+                        
+                        htmlOut += `</tr>\n`;
                     });
-                    
-                    htmlOut += `</tr>\n`;
                 });
             });
         });
