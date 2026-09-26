@@ -12055,8 +12055,10 @@ nodes = (
 closed = 1;
 nodes = (
 "684 67 LINE",
-"746 379 LINE",
-"541 379 LINE",
+"751 404 LINE",
+"463 404 LINE",
+"431 244 LINE",
+"514 244 LINE",
 "486 103 LINE"
 );
 },
