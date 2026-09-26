@@ -12164,8 +12164,10 @@ nodes = (
 {
 closed = 1;
 nodes = (
-"725 379 LINE",
-"520 379 LINE",
+"725 404 LINE",
+"437 404 LINE",
+"437 244 LINE",
+"520 244 LINE",
 "520 103 LINE",
 "725 73 LINE"
 );
