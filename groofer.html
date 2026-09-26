@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Gontserrat - Proofer</title>
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+        }
+        table.proofer-table {
+            border-collapse: collapse;
+            margin-top: 20pt;
+            width: max-content; /* Forces table to fit content rather than window */
+        }
+        table.proofer-table th, table.proofer-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            vertical-align: middle;
+        }
+        table.proofer-table th {
+            background-color: #eee;
+            font-size: 10pt;
+            font-weight: bold;
+            text-align: center;
+        }
+        table.proofer-table td.info {
+            font-size: 10pt;
+            background-color: #f9f9f9;
+            color: #333;
+            white-space: nowrap;
+        }
+        table.proofer-table td.char-cell {
+            text-align: center;
+            background-color: #fcfcfc;
+            min-width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2><b>Gontserrat Glyph Proofer</b></h2>
+        <div id="grid-container"></div>
+    </div>
+
+    <script>
+        // Define Font Variables
+        const weights = [
+            { name: 'Thin', val: 100 },
+            { name: 'ExtraLight', val: 200 },
+            { name: 'Light', val: 300 },
+            { name: 'Regular', val: 400 },
+            { name: 'Medium', val: 500 },
+            { name: 'SemiBold', val: 600 },
+            { name: 'Bold', val: 700 },
+            { name: 'ExtraBold', val: 800 },
+            { name: 'Black', val: 900 }
+        ];
+
+        const families = [
+            { id: 'Regular', dir: 'fonts', prefix: 'Gontserrat' },
+            { id: 'Alternates', dir: 'fonts-alternates', prefix: 'GontserratAlternates' },
+            { id: 'Underline', dir: 'fonts-underline', prefix: 'GontserratUnderline' }
+        ];
+
+        const italics = [
+            { id: 'Roman', suffix: '', style: 'normal' },
+            { id: 'Italic', suffix: 'Italic', style: 'italic' }
+        ];
+
+        const chars = ['G', 'g', 'Ǥ', 'ǥ', 'Ɠ', 'ɠ', '₲', 'Ǵ', 'ǵ', 'Ĝ', 'ĝ'];
+
+        // 1. Generate @font-face CSS
+        let cssOut = '';
+        families.forEach(fam => {
+            weights.forEach(w => {
+                italics.forEach(i => {
+                    // Handle the Regular + Italic naming edge case
+                    let weightItalicString = (w.name === 'Regular' && i.suffix === 'Italic') 
+                        ? 'Italic' 
+                        : `${w.name}${i.suffix}`;
+
+                    cssOut += `
+                    @font-face {
+                        font-family: "${fam.prefix}";
+                        src: url("${fam.dir}/ttf/${fam.prefix}-${weightItalicString}.ttf");
+                        font-weight: ${w.val};
+                        font-style: ${i.style};
+                    }\n`;
+                });
+            });
+        });
+
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = cssOut;
+        document.head.appendChild(styleTag);
+
+        // 2. Generate HTML Table Grid
+        let htmlOut = '<table class="proofer-table">';
+        
+        // Generate Table Headers
+        htmlOut += '<thead><tr>';
+        htmlOut += '<th>Weight</th><th>Version</th><th>Style</th>';
+        chars.forEach(c => {
+            htmlOut += `<th>${c}</th>`;
+        });
+        htmlOut += '</tr></thead><tbody>';
+        
+        // Loop Order: Weight -> Family -> Italics
+        weights.forEach(w => {
+            families.forEach(f => {
+                italics.forEach(i => {
+                    
+                    htmlOut += `<tr>
+                        <td class="info">${w.name}</td>
+                        <td class="info">${f.id}</td>
+                        <td class="info">${i.id}</td>`;
+                    
+                    // Render Characters (All globally set to small caps, so lowercase characters are retained)
+                    chars.forEach(c => {
+                        htmlOut += `<td class="char-cell" style="font-family: '${f.prefix}', 'Adobe NotDef', sans-serif; font-weight: ${w.val}; font-style: ${i.style}; font-feature-settings: &quot;smcp&quot;; font-size: 72px;">${c}</td>`;
+                    });
+                    
+                    htmlOut += `</tr>\n`;
+                });
+            });
+        });
+
+        htmlOut += '</tbody></table>';
+
+        // Inject HTML table into the DOM
+        document.getElementById('grid-container').innerHTML = htmlOut;
+    </script>
+</body>
+</html>
