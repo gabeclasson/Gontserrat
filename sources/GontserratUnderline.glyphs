@@ -124492,8 +124492,10 @@ nodes = (
 closed = 1;
 nodes = (
 "626 59 LINE",
-"626 304 LINE",
-"427 304 LINE",
+"626 334 LINE",
+"374 334 LINE",
+"374 203 LINE",
+"427 203 LINE",
 "427 56 LINE"
 );
 },
@@ -125168,8 +125170,10 @@ nodes = (
 closed = 1;
 nodes = (
 "626 59 LINE",
-"626 304 LINE",
-"427 304 LINE",
+"626 334 LINE",
+"374 334 LINE",
+"374 203 LINE",
+"427 203 LINE",
 "427 56 LINE"
 );
 },
