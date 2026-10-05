@@ -128405,8 +128405,10 @@ nodes = (
 {
 closed = 1;
 nodes = (
-"549 275 LINE",
-"532 263 LINE",
+"551 287 LINE",
+"355 287 LINE",
+"352 268 LINE",
+"529 268 LINE",
 "499 76 LINE",
 "512 69 LINE"
 );
@@ -128491,8 +128493,10 @@ nodes = (
 {
 closed = 1;
 nodes = (
-"584 292 LINE",
-"480 292 LINE",
+"593 323 LINE",
+"368 323 LINE",
+"346 216 LINE",
+"464 216 LINE",
 "437 79 LINE",
 "538 62 LINE"
 );
@@ -128578,8 +128582,10 @@ nodes = (
 {
 closed = 1;
 nodes = (
-"630 331 LINE",
-"426 311 LINE",
+"638 334 LINE",
+"386 334 LINE",
+"360 203 LINE",
+"413 203 LINE",
 "379 68 LINE",
 "577 59 LINE"
 );
