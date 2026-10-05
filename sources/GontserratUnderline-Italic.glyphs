@@ -160393,7 +160393,6 @@ nodes = (
 closed = 1;
 nodes = (
 "492 -3 LINE",
-"548 275 LINE",
 "551 287 LINE",
 "355 287 LINE",
 "352 268 LINE",
