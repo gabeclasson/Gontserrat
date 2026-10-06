@@ -1,4 +1,6 @@
-Copyright 2024 The Montserrat.Git Project Authors (https://github.com/JulietaUla/Montserrat.git)
+Gontserrat (reserved font name) is a derivative work of Montserrat under the Open Font License. Copyright 2026 Gabriel Classon. 
+
+Copyright notice for Montserrat: Copyright 2024 The Montserrat.Git Project Authors (https://github.com/JulietaUla/Montserrat.git).
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

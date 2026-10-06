@@ -4,8 +4,8 @@ from gftools.scripts.transfer_vtt_hints import transfer_hints
 
 
 sources = {
-    "sources/vtt/Montserrat[wght]-VTT.ttf": "fonts/variable/Montserrat[wght].ttf",
-    "sources/vtt/Montserrat-Italic[wght]-VTT.ttf": "fonts/variable/Montserrat-Italic[wght].ttf", 
+    "sources/vtt/Gontserrat[wght]-VTT.ttf": "fonts/variable/Gontserrat[wght].ttf",
+    "sources/vtt/Gontserrat-Italic[wght]-VTT.ttf": "fonts/variable/Gontserrat-Italic[wght].ttf", 
 }
 
 print("INFO:Integrating hinting sources and compiling")
