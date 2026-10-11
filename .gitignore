@@ -23,3 +23,5 @@ fontbakery
 sources/.ninja_log
 sources/build.ninja
 sources/instance_ufos/
+test.html
+proofer.html
